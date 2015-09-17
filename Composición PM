@@ -1,0 +1,68 @@
+int coorPX=100;
+int coorPY=95;
+
+//PacMac · Víctor Gómez
+void setup(){
+//Tamaño del canvas
+size(1000,700);
+}
+
+void draw(){
+  background(0);
+  
+//PacMan
+//Galletas
+//Filas horizontales
+noStroke();
+fill(255);
+for(int i=80;i<900;i+=50){
+  for(int j=95;j<900;j+=150){
+    ellipse(i,j,20,20);
+  }
+}
+
+//Filas verticales derecha
+for(int i=95;i<250;i+=50){
+    ellipse(920,i,20,20);  
+}
+for(int i=395;i<550;i+=50){
+    ellipse(920,i,20,20);  
+}
+
+//Filas verticales izquierda
+for(int i=245;i<400;i+=50){
+    ellipse(80,i,20,20);  
+}
+
+for(int i=545;i<700;i+=50){
+    ellipse(80,i,20,20);  
+}
+
+//Pacman
+fill(252,216,3);
+arc(coorPX, coorPY, 150, 150, PI/6, 11*PI/6);
+
+//Ojo
+noStroke();
+fill(0);
+ellipse(coorPX+5,coorPY-45,15,15);
+
+//Fantasma mouse
+//Cuerpo dividido en elipses y rectángulos
+fill(54,167,222);
+ellipse(mouseX,mouseY,40,40);
+rect(mouseX-20,mouseY,40,40);
+//ondas
+ellipse(mouseX-13,mouseY+40,15,15);
+ellipse(mouseX,mouseY+40,15,15);
+ellipse(mouseX+13,mouseY+40,15,15);
+
+//Ojos
+fill(255);
+ellipse(mouseX-5,mouseY+5,10,10);
+ellipse(mouseX+5,mouseY+5,10,10);
+fill(0);
+ellipse(mouseX-5,mouseY+5,4,4);
+ellipse(mouseX+5,mouseY+5,4,4);
+
+}
